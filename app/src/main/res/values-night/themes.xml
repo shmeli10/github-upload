@@ -1,0 +1,16 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Application theme for dark theme. -->
+    <style name="Base.Theme.QRReader" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/qrreader_blue_500</item>
+        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimaryDark">@color/qrreader_blue_700</item>
+        <item name="colorOnSurface">@color/qrreader_black</item>
+        <item name="colorAccent">@color/qrreader_blue_700</item>
+        <item name="colorSurface">@color/qrreader_gray_50</item>
+        <item name="colorSecondary">@color/white</item>
+        <item name="android:colorBackground">@color/qrreader_blue_500</item>
+    </style>
+
+    <style name="Theme.QRReader" parent="Base.Theme.QRReader"/>
+
+</resources>

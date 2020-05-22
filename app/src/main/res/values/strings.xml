@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">QRReader</string>
+    <string name="code_reader_title">Reader</string>
+    <string name="code_list_title">List</string>
+    <string name="camera_permission_required">Camera permission is required</string>
+    <string name="allow_camera_permission">Allow</string>
+    <string name="permission_status_granted">Granted</string>
+    <string name="permission_status_denied">Denied</string>
+    <string name="permission_status_blocked">Blocked</string>
+    <string name="code_detected">Code that was detected</string>
+    <string name="flashlight">Flashlight</string>
+</resources>

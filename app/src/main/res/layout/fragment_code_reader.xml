@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <data>
+
+        <variable
+            name="hasCameraPermission"
+            type="boolean" />
+
+        <variable
+            name="hasStoragePermission"
+            type="boolean" />
+
+        <variable
+            name="codeDetected"
+            type="boolean" />
+    </data>
+
+    <RelativeLayout
+        android:id="@+id/contentWrapper"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/standard_padding">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/reader"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/camera_preview_height"
+            android:background="@color/white"
+            app:isGone="@{!hasCameraPermission}">
+
+            <SurfaceView
+                android:id="@+id/cameraPreview"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clipToPadding="false"
+                app:isGone="@{codeDetected}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ToggleButton
+                android:id="@+id/flashLight"
+                style="@style/FlashlightButton"
+                android:layout_width="@dimen/reader_btn_size"
+                android:layout_height="@dimen/reader_btn_size"
+                android:layout_marginTop="@dimen/standard_padding"
+                android:layout_marginEnd="@dimen/standard_padding"
+                android:contentDescription="@string/flashlight"
+                android:background="@drawable/flashlight_bg"
+                android:checked="false"
+                app:isGone="@{codeDetected}"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/codeImg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@string/code_detected"
+                android:scaleType="fitXY"
+                app:isGone="@{!codeDetected}"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/barCodeValue"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/reader"
+            android:layout_marginTop="@dimen/standard_padding"
+            android:gravity="center_horizontal"
+            android:text="---"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:textColor="@color/white"
+            app:isGone="@{!hasCameraPermission}" />
+
+        <TextView
+            android:id="@+id/no_camera_permission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:text="@string/camera_permission_required"
+            android:textAppearance="?attr/textAppearanceHeadline5"
+            android:textColor="@color/white"
+            app:isGone="@{hasCameraPermission}" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/allow_camera_permission"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/no_camera_permission"
+            android:layout_centerHorizontal="true"
+            android:text="@string/allow_camera_permission"
+            android:textColor="?attr/colorPrimary"
+            app:backgroundTint="?attr/colorOnPrimary"
+            app:isGone="@{hasCameraPermission}"
+            app:shapeAppearance="@style/Button.Allow" />
+
+    </RelativeLayout>
+
+</layout>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_checked="false"
+        android:drawable="@drawable/ic_flashlight_off" />
+    <item android:state_checked="true"
+        android:drawable="@drawable/ic_flashlight_on" />
+</selector>
+
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:drawable="@drawable/ic_flashlight_on"
+        android:state_checked="true"
+        android:state_pressed="true"/>
+    <item
+        android:drawable="@drawable/ic_flashlight_on"
+        android:state_checked="true"
+        android:state_focused="false"/>
+    <item
+        android:drawable="@drawable/ic_flashlight_off"
+        android:state_checked="false"
+        android:state_pressed="true"/>
+    <item
+        android:drawable="@drawable/ic_flashlight_off"
+        android:state_checked="false"
+        android:state_focused="false"/>
+</selector>-->
+
+<!--<selector xmlns:android="http://schemas.android.com/apk/res/android">-->
+<!--    <item android:drawable="@drawable/ic_flashlight_on" android:state_selected="true"></item>-->
+<!--    <item android:drawable="@drawable/ic_flashlight_on" android:state_pressed="true"></item>-->
+<!--    <item android:drawable="@drawable/ic_flashlight_off"></item>-->
+<!--</selector>-->
